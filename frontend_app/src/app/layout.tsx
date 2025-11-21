@@ -1,9 +1,20 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Minimal Next.js App",
-  description: "Ultra-minimal Next.js application",
+  title: "Ocean Recipes",
+  description:
+    "Browse, search, and view simple recipes with a clean Ocean Professional theme.",
+  applicationName: "Ocean Recipes",
+  authors: [{ name: "Ocean Recipes" }],
+  keywords: ["recipes", "cooking", "search", "Next.js", "ocean", "modern"],
+  openGraph: {
+    title: "Ocean Recipes",
+    description:
+      "Browse, search, and view simple recipes with a clean Ocean Professional theme.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -14,7 +25,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
-        {children}
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
+        <Navbar />
+        <main id="main" className="container">
+          {children}
+        </main>
       </body>
     </html>
   );
