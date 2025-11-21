@@ -1,25 +1,13 @@
-export type Recipe = {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  ingredients: string[];
-  steps: string[];
-  time: string; // e.g., "30 min"
-  servings: number;
-  difficulty: "Easy" | "Medium" | "Hard";
-};
+import { Recipe } from "@/lib/types";
 
-export const sampleRecipes: Recipe[] = [
+export const sampleRecipes: Omit<Recipe, 'cookTime'>[] = [
   {
     id: "lemon-garlic-salmon",
-    title: "Lemon Garlic Salmon",
+    name: "Lemon Garlic Salmon",
     description:
       "Pan-seared salmon finished with a bright lemon-garlic butter sauce.",
     image:
       "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1600&auto=format&fit=crop",
-    tags: ["Seafood", "Dinner", "Healthy"],
     ingredients: [
       "2 salmon fillets",
       "2 tbsp butter",
@@ -28,25 +16,23 @@ export const sampleRecipes: Recipe[] = [
       "Salt & pepper",
       "Fresh parsley",
     ],
-    steps: [
+    instructions: [
       "Pat salmon dry, season with salt and pepper.",
       "Sear salmon in a hot pan with a little oil, 3-4 min per side.",
       "Remove salmon; add butter and garlic to pan and sauté 30 sec.",
       "Add lemon juice and zest; simmer 1 min and pour over salmon.",
       "Garnish with parsley and serve.",
     ],
-    time: "25 min",
-    servings: 2,
-    difficulty: "Easy",
+    servings: "2",
+    reviews: [],
   },
   {
     id: "creamy-mushroom-pasta",
-    title: "Creamy Mushroom Pasta",
+    name: "Creamy Mushroom Pasta",
     description:
       "Silky pasta tossed in a creamy garlic mushroom sauce with parmesan.",
     image:
       "https://images.unsplash.com/photo-1523986371872-9d3ba2e2f642?q=80&w=1600&auto=format&fit=crop",
-    tags: ["Vegetarian", "Comfort", "Pasta"],
     ingredients: [
       "200g pasta",
       "250g mushrooms, sliced",
@@ -57,7 +43,7 @@ export const sampleRecipes: Recipe[] = [
       "Salt & pepper",
       "Parsley to serve",
     ],
-    steps: [
+    instructions: [
       "Cook pasta in salted water until al dente, reserve 1/4 cup water.",
       "Sauté mushrooms in olive oil until golden.",
       "Add garlic and cook 30 sec until fragrant.",
@@ -65,18 +51,16 @@ export const sampleRecipes: Recipe[] = [
       "Toss with pasta, parmesan, and splash of pasta water to emulsify.",
       "Season and garnish with parsley.",
     ],
-    time: "30 min",
-    servings: 2,
-    difficulty: "Medium",
+    servings: "2",
+    reviews: [],
   },
   {
     id: "spicy-chicken-tacos",
-    title: "Spicy Chicken Tacos",
+    name: "Spicy Chicken Tacos",
     description:
       "Juicy, spiced chicken tucked in warm tortillas with crisp toppings.",
     image:
       "https://images.unsplash.com/photo-1604467794349-0b74285de7e9?q=80&w=1600&auto=format&fit=crop",
-    tags: ["Chicken", "Quick", "Tacos"],
     ingredients: [
       "400g chicken thighs, sliced",
       "2 tsp chili powder",
@@ -87,13 +71,12 @@ export const sampleRecipes: Recipe[] = [
       "Shredded lettuce, diced tomato, sour cream",
       "Salt & pepper",
     ],
-    steps: [
+    instructions: [
       "Toss chicken with spices, lime juice, salt and pepper.",
       "Sear in a hot pan until cooked through and lightly charred.",
       "Warm tortillas and assemble with toppings.",
     ],
-    time: "20 min",
-    servings: 3,
-    difficulty: "Easy",
+    servings: "3",
+    reviews: [],
   },
 ];
