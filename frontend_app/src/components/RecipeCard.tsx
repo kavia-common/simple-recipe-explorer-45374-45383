@@ -34,7 +34,15 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
           </div>
           <div className="flex items-center justify-between pt-2 border-t border-black/5 dark:border-white/5 mt-4">
             <div className="text-xs" style={{ color: "var(--color-text)", opacity: 0.6 }}>
-              🕚 {recipe.cookTime} · 👥 {recipe.servings} · 🧑‍🍳 {recipe.difficulty}
+              🕐 {recipe.cookTime} · 👥 {recipe.servings} · 🧑‍🍳 {recipe.difficulty}
+            </div>
+            <div className="flex items-center gap-2">
+              <span 
+                className="text-lg font-bold px-2 py-1 rounded-md bg-gradient-to-r from-blue-500/10 to-amber-500/10 border border-blue-500/20 dark:border-blue-400/20"
+                style={{ color: "var(--color-primary)" }}
+              >
+                ${typeof recipe.price === 'number' ? recipe.price.toFixed(2) : 'N/A'}
+              </span>
             </div>
           </div>
         </div>

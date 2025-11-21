@@ -6,6 +6,7 @@ export const sampleRecipes: Recipe[] = [
     name: 'Creamy Mushroom Pasta',
     description: 'A rich and creamy pasta dish with sautéed mushrooms and a hint of garlic.',
     image: 'https://images.unsplash.com/photo-1523986371872-9d3ba2e2f642?q=80&w=1600&auto=format&fit=crop',
+    price: 12.99,
     ingredients: [
       '8 oz pasta (fettuccine or penne)',
       '1 tbsp olive oil',
@@ -78,6 +79,7 @@ export const sampleRecipes: Recipe[] = [
     name: 'Lemon Garlic Salmon',
     description: 'A quick and healthy salmon recipe with a zesty lemon-garlic butter sauce.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1600&auto=format&fit=crop',
+    price: 18.50,
     ingredients: [
       '2 (6 oz) salmon fillets',
       '2 tbsp butter, melted',
@@ -148,6 +150,7 @@ export const sampleRecipes: Recipe[] = [
     name: 'Spicy Chicken Tacos',
     description: 'Flavorful and spicy chicken tacos topped with a refreshing cabbage slaw.',
     image: 'https://images.unsplash.com/photo-1604467794349-0b74285de7e9?q=80&w=1600&auto=format&fit=crop',
+    price: 9.25,
     ingredients: [
       '1 lb boneless, skinless chicken breasts, cut into bite-sized pieces',
       '1 tbsp chili powder',
@@ -215,6 +218,7 @@ export const sampleRecipes: Recipe[] = [
     name: 'Classic Chocolate Chip Cookies',
     description: 'Soft, chewy chocolate chip cookies that are perfect for any occasion.',
     image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1600&auto=format&fit=crop',
+    price: 6.75,
     ingredients: [
       '2 1/4 cups all-purpose flour',
       '1 tsp baking soda',
@@ -289,6 +293,7 @@ export const sampleRecipes: Recipe[] = [
     name: 'Classic Caesar Salad',
     description: 'Fresh romaine lettuce with homemade Caesar dressing, croutons, and parmesan.',
     image: 'https://images.unsplash.com/photo-1546793665-c74683f339c1?q=80&w=1600&auto=format&fit=crop',
+    price: 8.95,
     ingredients: [
       '1 large head romaine lettuce, chopped',
       '1/2 cup mayonnaise',
@@ -368,6 +373,7 @@ export const sampleRecipes: Recipe[] = [
     name: 'Beef and Vegetable Stir Fry',
     description: 'Quick and flavorful beef stir fry with fresh vegetables in a savory sauce.',
     image: 'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?q=80&w=1600&auto=format&fit=crop',
+    price: 15.30,
     ingredients: [
       '1 lb beef sirloin, sliced thin',
       '2 tbsp vegetable oil',
@@ -460,6 +466,7 @@ export const sampleRecipes: Recipe[] = [
     name: 'Moist Banana Bread',
     description: 'Incredibly moist and flavorful banana bread made with ripe bananas.',
     image: 'https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?q=80&w=1600&auto=format&fit=crop',
+    price: 7.50,
     ingredients: [
       '3 very ripe bananas, mashed',
       '1/3 cup melted butter',
