@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "Ocean Recipes",
@@ -24,14 +25,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>
-        <a href="#main" className="skip-link">
-          Skip to content
-        </a>
-        <Navbar />
-        <main id="main" className="container">
-          {children}
-        </main>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <a href="#main" className="skip-link">
+            Skip to content
+          </a>
+          <Navbar />
+          <main id="main" className="container">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

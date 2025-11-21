@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ThemeToggle } from "./ThemeToggle";
 
 /**
  * PUBLIC_INTERFACE
@@ -12,7 +13,7 @@ export default function Navbar() {
   const pathname = usePathname();
   return (
     <header
-      className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70"
+      className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-background/70"
       role="banner"
       aria-label="Top Navigation"
     >
@@ -42,6 +43,7 @@ export default function Navbar() {
             Ocean Recipes
           </Link>
           <div className="flex items-center gap-3">
+            <ThemeToggle />
             <a
               className="btn"
               href="https://nextjs.org"

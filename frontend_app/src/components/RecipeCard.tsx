@@ -9,37 +9,36 @@ import type { Recipe } from "@/data/recipes";
 export default function RecipeCard({ recipe }: { recipe: Recipe }) {
   return (
     <article className="card overflow-hidden h-full flex flex-col">
-      <div className="relative w-full aspect-[16/9] overflow-hidden">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={recipe.image}
-          alt={`Image of ${recipe.title}`}
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="p-4 flex flex-col gap-3 flex-1">
-        <h3 className="text-lg font-semibold" style={{ color: "var(--color-text)" }}>
-          {recipe.title}
-        </h3>
-        <p className="text-sm" style={{ color: "rgba(17,24,39,0.75)" }}>
-          {recipe.description}
-        </p>
-        <div className="flex flex-wrap gap-2 mt-auto">
-          {recipe.tags.slice(0, 3).map((t) => (
-            <span key={t} className="tag">
-              {t}
-            </span>
-          ))}
+      <Link href={`/recipes/${recipe.id}`} className="block h-full flex flex-col">
+        <div className="relative w-full aspect-[16/9] overflow-hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={recipe.image}
+            alt={`Image of ${recipe.title}`}
+            className="w-full h-full object-cover"
+          />
         </div>
-        <div className="flex items-center justify-between pt-2">
-          <div className="text-xs" style={{ color: "rgba(17,24,39,0.7)" }}>
-            ⏱ {recipe.time} · 👥 {recipe.servings} · 🧪 {recipe.difficulty}
+        <div className="p-4 flex flex-col gap-3 flex-1">
+          <h3 className="text-lg font-semibold" style={{ color: "var(--color-text)" }}>
+            {recipe.title}
+          </h3>
+          <p className="text-sm" style={{ color: "var(--color-text)", opacity: 0.7 }}>
+            {recipe.description}
+          </p>
+          <div className="flex flex-wrap gap-2 mt-auto pt-2">
+            {recipe.tags.slice(0, 3).map((t) => (
+              <span key={t} className="tag">
+                {t}
+              </span>
+            ))}
           </div>
-          <Link href={`/recipes/${recipe.id}`} className="btn text-sm px-3 py-2">
-            View
-          </Link>
+          <div className="flex items-center justify-between pt-2 border-t border-black/5 dark:border-white/5 mt-4">
+            <div className="text-xs" style={{ color: "var(--color-text)", opacity: 0.6 }}>
+              🕚 {recipe.time} · 👥 {recipe.servings} · 🧑‍🍳 {recipe.difficulty}
+            </div>
+          </div>
         </div>
-      </div>
+      </Link>
     </article>
   );
 }
