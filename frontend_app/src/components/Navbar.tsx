@@ -3,14 +3,19 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ThemeToggle } from "./ThemeToggle";
+import { useItems } from "@/context/ItemsProvider";
+import { Heart } from "lucide-react";
 
 /**
  * PUBLIC_INTERFACE
  * Navbar
  * Top navigation bar with branding for the Ocean Professional theme.
+ * Displays favorites count badge.
  */
 export default function Navbar() {
   const pathname = usePathname();
+  const { count } = useItems();
+
   return (
     <header
       className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-background/70"
@@ -43,6 +48,26 @@ export default function Navbar() {
             Ocean Recipes
           </Link>
           <div className="flex items-center gap-3">
+            <button
+              className="relative p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              aria-label={`Favorites (${count} items)`}
+              title="View favorites"
+            >
+              <Heart 
+                className="w-5 h-5" 
+                style={{ color: "var(--color-primary)" }}
+                fill={count > 0 ? "var(--color-primary)" : "none"}
+              />
+              {count > 0 && (
+                <span
+                  className="absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 text-xs font-bold text-white rounded-full"
+                  style={{ backgroundColor: "var(--color-secondary)" }}
+                  aria-hidden="true"
+                >
+                  {count}
+                </span>
+              )}
+            </button>
             <ThemeToggle />
             <a
               className="btn"

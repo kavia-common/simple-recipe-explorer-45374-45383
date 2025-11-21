@@ -6,6 +6,7 @@ import type { Recipe } from "@/lib/types";
 import Image from "next/image";
 import { Clock, Users } from "lucide-react";
 import ReviewsSection from "@/components/ReviewsSection";
+import RecipeDetailClient from "@/components/RecipeDetailClient";
 
 
 /**
@@ -60,6 +61,8 @@ export default async function RecipeDetail({
   const recipe: Recipe | undefined = await getRecipeById(params.id);
   if (!recipe) return notFound();
 
+  const imageQuality = 80;
+
   return (
     <div className="container py-8">
       <article className="max-w-4xl mx-auto">
@@ -72,15 +75,20 @@ export default async function RecipeDetail({
           </p>
         </header>
 
-        <div className="relative w-full h-96 mb-8 rounded-2xl overflow-hidden shadow-lg">
+        <div className="relative w-full h-96 mb-8 rounded-2xl overflow-hidden shadow-lg group">
           <Image
             src={recipe.image}
             alt={`Image of ${recipe.name}`}
             fill
+            quality={imageQuality}
             style={{ objectFit: 'cover' }}
             className="transform group-hover:scale-105 transition-transform duration-300"
             priority
           />
+          <div className="absolute bottom-4 left-4 px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-sm text-white text-sm font-medium shadow-lg">
+            Quality: {imageQuality}
+          </div>
+          <RecipeDetailClient recipeId={recipe.id} recipeName={recipe.name} />
         </div>
 
         <div className="flex items-center justify-center gap-8 md:gap-12 mb-8 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-sm">
