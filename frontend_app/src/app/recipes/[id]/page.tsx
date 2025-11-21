@@ -76,8 +76,8 @@ export default async function RecipeDetail({
           <Image
             src={recipe.image}
             alt={`Image of ${recipe.name}`}
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: 'cover' }}
             className="transform group-hover:scale-105 transition-transform duration-300"
             priority
           />

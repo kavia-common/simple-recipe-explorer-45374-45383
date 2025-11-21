@@ -12,9 +12,9 @@ interface ReviewsSectionProps {
 }
 
 const ReviewsSection = ({ recipe }: ReviewsSectionProps) => {
-  const { reviews, isLoading, error, addReview } = useReviews(recipe.id, recipe.reviews);
+  const { reviews, isLoading, error, addReview } = useReviews(recipe.id, recipe.reviews || []);
 
-  const averageRating = reviews.length > 0
+  const averageRating = reviews && reviews.length > 0
     ? reviews.reduce((acc, review) => acc + review.rating, 0) / reviews.length
     : 0;
 
