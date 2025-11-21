@@ -29,7 +29,7 @@ export default function Home() {
     const q = query.trim().toLowerCase();
     if (!q) return all;
     return all.filter((r) => {
-      const inTitle = r.title.toLowerCase().includes(q);
+      const inTitle = r.name.toLowerCase().includes(q);
       const inDesc = r.description.toLowerCase().includes(q);
       const inIngr = r.ingredients.some((i) =>
         i.toLowerCase().includes(q)

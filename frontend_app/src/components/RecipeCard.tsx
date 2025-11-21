@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Recipe } from "@/data/recipes";
+import type { Recipe } from "@/lib/types";
 
 /**
  * PUBLIC_INTERFACE
@@ -14,13 +14,13 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={recipe.image}
-            alt={`Image of ${recipe.title}`}
+            alt={`Image of ${recipe.name}`}
             className="w-full h-full object-cover"
           />
         </div>
         <div className="p-4 flex flex-col gap-3 flex-1">
           <h3 className="text-lg font-semibold" style={{ color: "var(--color-text)" }}>
-            {recipe.title}
+            {recipe.name}
           </h3>
           <p className="text-sm" style={{ color: "var(--color-text)", opacity: 0.7 }}>
             {recipe.description}
@@ -34,7 +34,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
           </div>
           <div className="flex items-center justify-between pt-2 border-t border-black/5 dark:border-white/5 mt-4">
             <div className="text-xs" style={{ color: "var(--color-text)", opacity: 0.6 }}>
-              🕚 {recipe.time} · 👥 {recipe.servings} · 🧑‍🍳 {recipe.difficulty}
+              🕚 {recipe.cookTime} · 👥 {recipe.servings} · 🧑‍🍳 {recipe.difficulty}
             </div>
           </div>
         </div>

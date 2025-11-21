@@ -1,5 +1,5 @@
 import RecipeCard from "./RecipeCard";
-import type { Recipe } from "@/data/recipes";
+import type { Recipe } from "@/lib/types";
 
 /**
  * PUBLIC_INTERFACE
