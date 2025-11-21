@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { getRecipes } from "@/lib/api";
-import type { Recipe } from "@/data/recipes";
+import type { Recipe } from "@/lib/types";
 import SearchBar from "@/components/SearchBar";
 import RecipeGrid from "@/components/RecipeGrid";
 
